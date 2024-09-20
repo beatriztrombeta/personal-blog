@@ -1,0 +1,42 @@
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --custom-default-black: #201614;
+  --custom-default-white: #f9f7f1;
+  --custom-cream: #fce3c8;
+  --custom-green: #7c7b47;
+  --custom-red: #c53926;
+  --custom-orange: #d26519;
+
+  --custom-light-green: #cfcd49;
+  --custom-water-green: #67ab9c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  @apply font-sedan;
+  color: var(--custom-default-black);
+}
+
+h1 {
+  @apply font-homemade
+}
+
+a {
+  cursor: pointer;
+}
