@@ -57,11 +57,15 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  //também não consegui pensar em nenhum exemplo bom dentro da aplicação
-  //pro beforeEach
+  if (to.matched.length === 0) {
+    alert('Error 404: Página não encontrada');
+    next('/');
+    return;
+  }
   console.log(`Navegando para: ${to.name} a partir de ${from.name}`);
   next();
 });
+
 
 
 export default router
