@@ -15,7 +15,7 @@ const contacts = ref([
       <h1 class="text-3xl">Contato</h1>
     </div>
     <div class="text-lg gap-3 flex flex-col">
-      <p v-for="(contact, index) in contacts" :key="index">
+      <p v-for="(contact, label) in contacts" :key="label">
         {{ contact.label }}: 
         <a class="underline text-customRed" :href="contact.url">{{ contact.text }}</a>
       </p>

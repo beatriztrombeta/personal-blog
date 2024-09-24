@@ -1,30 +1,3 @@
-<template>
-  <div class="flex flex-col items-center justify-center gap-4 !my-[5rem]">
-    <h1 class="text-3xl">Escrita</h1>
-    <nav>
-      <router-link class="underline" to="/writings/books">Recomendação de livros</router-link>
-    </nav>
-  </div>
-  <main class="flex flex-col gap-20 !mx-[6rem] !mb-[5rem]">
-    <router-view />
-    <section class="w-full">
-      <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
-        <div v-for="(writing, id) in writings" :key="id" class="cursor-pointer" @click="handleGoToArticle(writing.id)">
-          <TheCard class="overflow-hidden">
-            <template #header>
-              <img :src="writing.imgSrc" alt="Image" class="w-full" />
-            </template>
-            <template #title>{{ writing.title }}</template>
-            <template #content>
-              <p>{{ writing.content }}</p>
-            </template>
-          </TheCard>
-        </div>
-      </div>
-    </section>
-  </main>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -67,3 +40,31 @@ const writings = ref([
   }
 ])
 </script>
+
+<template>
+  <div class="flex flex-col items-center justify-center gap-4 !my-[5rem]">
+    <h1 class="text-3xl">Escrita</h1>
+    <nav>
+      <router-link class="underline" to="/writings/books">Recomendação de livros</router-link>
+    </nav>
+  </div>
+  <main class="flex flex-col gap-20 !mx-[6rem] !mb-[5rem]">
+    <router-view />
+    <section class="w-full">
+      <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
+        <div v-for="(writing, id) in writings" :key="id" class="cursor-pointer" @click="handleGoToArticle(writing.id)">
+          <TheCard class="overflow-hidden">
+            <template #header>
+              <img :src="writing.imgSrc" alt="Image" class="w-full" />
+            </template>
+            <template #title>{{ writing.title }}</template>
+            <template #content>
+              <p>{{ writing.content }}</p>
+            </template>
+          </TheCard>
+        </div>
+      </div>
+    </section>
+  </main>
+</template>
+
